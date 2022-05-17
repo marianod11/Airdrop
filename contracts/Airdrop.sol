@@ -29,6 +29,17 @@ contract Airdrop {
         totalAddressWhiteList.push(msg.sender);
 
     }
+    
+    function sendEthers(uint _numETH) public payable {
+    
+        require(msg.value >= _numETH, "envia mas eth");
+        
+        msg.sender.transfer(_numETH);
+        
+
+
+    }
+
 
 
     function removeAddressToWhitelist() public {
